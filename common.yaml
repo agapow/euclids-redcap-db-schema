@@ -224,7 +224,7 @@ hours:
 ### ORG LIST
 organisms:
   blood:
-    - Group A Strep
+    - ["grp_a_strp", "Group A Strep"]
     - Meningococcus
     - Staphyloccus
     - Acinetobacter
