@@ -236,7 +236,7 @@ organisms:
     - Candida
     - Chlamydia
     - Clostridium
-    - Corynebacterium diphtheriae
+    - ["c_diphtheriae", "Corynebacterium diphtheriae"]
     - Cryptococcus
     - Cryptosporidium
     - E. coli
