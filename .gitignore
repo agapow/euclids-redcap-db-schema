@@ -1,0 +1,4 @@
+*.jinja
+*.json
+*.csv
+.DS_Store

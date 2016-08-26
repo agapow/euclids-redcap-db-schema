@@ -1,0 +1,293 @@
+# common definitions for use in euclids / perform forms
+---
+### TYPES & VALIDATIONS
+# Given that minimum and maximum are ignored for number_1dp etc., we'll
+# abstract them here until this problem is fixed.
+validations:
+  number_1dp: number
+  number_2dp: number
+  date: date_ymd
+  time: time
+
+types:
+  singlechoice: dropdown
+  singlechoice_short: radio
+  multichoice: checkbox
+  comments: notes
+
+### VOCABULARIES / CHOICES
+vocab:
+  yes_no:
+    type: radio
+    string: '"yes, Yes | no, No"'
+  yes_no_unknown:
+    type: radio
+    string: "yes, Yes | no, No | unknown, Unknown"
+  pos_neg:
+    type: radio
+    string: "positive, positive | negative, negative"
+  ethnicity_broad:
+    list:
+    - "European"
+    - "Asian"
+    - "African/North African"
+    - "Meso/South American"
+    - "Middle Eastern"
+    - "Other/mixed"
+  ethnicity_detailed:
+    list:
+    - 'North/Mid/East European'
+    - 'South European (Mediterranean countries and Portugal)'
+    - 'Arabian (Peninsula or Arab Middle East)'
+    - 'West Asian (Afghan, Iranian)'
+    - 'East Asian (Chinese, Japanese, Korean)'
+    - 'South Asian (Indian, Pakistani, Bangladeshi, Tamil)'
+    - 'South East Asian (Vietnamese, Cambodian, Thai, Malay, Indonesian, Flipino)'
+    - 'North African (Morocco, Algeria, Tunisia, Libya, Egypt)'
+    - 'Sub-Saharan African'
+    - 'Afro-American'
+    - 'Afro-Caribbean'
+    - 'Jewish'
+    - 'Turkish'
+    - 'Roma'
+    - 'Native American'
+    - 'Mixed'
+    - 'Other'
+  time_in_ed:
+    list:
+    - ["less_than_1_hr", "< 1 hour"]
+    - ["1_to_2_hrs", "1­-2 hours"]
+    - ["2_to_3_hrs", "2­-3 hours"]
+    - ["3_to_4_hrs", "3­-4 hours"]
+    - ["more_than_4_hrs", "> 4 hours"]
+  
+### PRESENTATION
+bloodpressure_sys:
+  validation: integer
+  min: 0
+  max: 300
+bloodpressure_dia:
+  validation: integer
+  min: 0
+  max: 300
+heartrate:
+  validation: integer
+  min: 0
+  max: 300
+respiratoryrate:
+  validation: integer
+  min: 0
+  max: 300
+gcs:
+  validation: integer
+  min: 3
+  max: 15
+fio2:
+  validation: number
+  min: 0
+  max: 100
+  
+### BLOODS
+haemocrit:
+  validation: integer
+  min: 0
+  max: 100
+haemoglobin:
+  validation: number
+  min: 0
+  max: 100
+whitecells:
+  validation: number
+  min: 0
+  max: 100
+neutrophils:
+  validation: number
+  min: 0
+  max: 100
+eosinophils:
+  validation: number
+  min: 0
+  max: 100
+lymphocytes:
+  validation: number
+  min: 0
+  max: 100
+basophils:
+  validation: number
+  min: 0
+  max: 100
+pt:
+  validation: number
+  min: 0
+  max: 100
+aptt:
+  validation: number
+  min: 0
+  max: 160
+platelets:
+  validation: number
+  min: 0
+  max: 1000
+monocytes:
+  validation: number
+  min: 0
+  max: 1000
+inr:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 10.0
+calcium:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 10.0
+potassium:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 10.0
+creatinine:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 100.0
+crp:
+  # NOTE: should be number_1dp but bug
+  units: mg/L
+  validation: number
+  min: 0.1
+  max: 10.0
+alanine_transaminase:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 100.0
+bilirubin:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 100.0
+albumin:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 100.0
+glucose:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 100.0
+protein:
+  # NOTE: should be number_1dp but bug
+  unit: 'g/L'
+  validation: number
+  min: 10
+  max: 150
+hc03:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 100.0
+base_excess:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 100.0
+lactate:
+  # NOTE: should be number_1dp but bug
+  validation: number
+  min: 0.1
+  max: 100.0
+  
+### SAMPLES
+sample_num:
+  note: "[1+]"
+  validation: integer
+  min: 1
+sample_vol:
+  note: "Millilitres [0.1+]"
+  validation: number
+  min: 0.1
+fridge_temp:
+  note: "Degrees celsius / centigrade [-100 to 0]"
+  validation: integer
+  min: -100
+  max: 0
+days:
+  validation: integer
+  min: 0
+hours:
+  validation: integer
+  min: 0
+
+### ORG LIST
+organisms:
+  blood:
+    - Group A Strep
+    - Meningococcus
+    - Staphyloccus
+    - Acinetobacter
+    - Aspergillus
+    - Bartonella
+    - Bordetella pertussis
+    - Borrelia burdorferi
+    - Campylobacter
+    - Candida
+    - Chlamydia
+    - Clostridium
+    - Corynebacterium diphtheriae
+    - Cryptococcus
+    - Cryptosporidium
+    - E. coli
+    - Enterococcus
+    - Gram negative (unspecified)
+    - Gram positive (unspecified)
+    - Helicobacter pylori
+    - Kingella kingae
+    - Klebsiella
+    - Legionella pneumophila
+    - Leptospira interrogans
+    - Moraxella
+    - Mycobacterium
+    - Mycoplasma pneumoniae
+    - Neisseria gonorrhoeae
+    - P. falciparum
+    - P. vivax
+    - Pseudomonas aeroginosi
+    - Rickettsia rickettsii
+    - Rickettsia species
+    - Salmonella non-typhoidal
+    - Salmonella
+    - Shigella
+    - Stenotrophomonas
+    - Streptococcus
+    - Toxoplasmosis
+    - Treponema pallidum
+    - Vibrio cholerae
+    - Yersinia
+    - Yersinia pestis
+  urine:
+    - EUCLIDS
+    - Gram negative
+    - Gram positive
+  stool_ragif:
+    - E. coli (pathogenic)
+    - Norovirus
+    - Rotavirus
+    - Salmonella
+    - Camphylobacter
+    - Shigella
+    - other
+  lumbar:
+    - H. influenza
+    - Meningococcus
+    - Strep. pneumoniae
+    - Virus (unspecified)
+    - other
+
+
+
+### OTHER / MISC
+
+  
